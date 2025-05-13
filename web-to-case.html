@@ -1,54 +1,124 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Support – Web-to-Case</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  <style>
+    body {
+      background-color: #f4f6f8;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px 10px;
+    }
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
+    .container {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000002BW1r" method="POST">
+    h2 {
+      text-align: center;
+      color: #1a73e8;
+      margin-bottom: 20px;
+    }
 
-<input type=hidden name="orgid" value="00DgL000002BW1r">
-<input type=hidden name="retURL" value="https://dikanu.github.io/web-to-case-feedback/thank-you.html">
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 500;
+    }
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="divanshu.agrawal@outlook.com">                                   -->
-<!--  ----------------------------------------------------------------------  -->
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
 
-<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    input[type="submit"] {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      width: 100%;
+    }
 
-<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+    input[type="submit"]:hover {
+      background-color: #0c5bcc;
+    }
+  </style>
+</head>
+<body>
 
-<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+  <div class="container">
+    <h2>Contact Our Support Team</h2>
 
-<label for="priority">Priority</label><select  id="priority" name="priority"><option value="">--None--</option><option value="High">High</option>
-<option value="Medium">Medium</option>
-<option value="Low">Low</option>
-</select><br>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000002BW1r" method="POST">
 
-Product:<select  id="00NgL00000t6f4A" name="00NgL00000t6f4A" title="Product"><option value="">--None--</option><option value="GC1040">GC1040</option>
-<option value="GC1060">GC1060</option>
-<option value="GC3020">GC3020</option>
-<option value="GC3040">GC3040</option>
-<option value="GC3060">GC3060</option>
-<option value="GC5020">GC5020</option>
-<option value="GC5040">GC5040</option>
-<option value="GC5060">GC5060</option>
-<option value="GC1020">GC1020</option>
-</select><br>
+      <input type="hidden" name="orgid" value="00DgL000002BW1r">
+      <input type="hidden" name="retURL" value="https://dikanu.github.io/web-to-case-feedback/thank-you.html">
 
-<label for="description">Description</label><textarea name="description"></textarea><br>
+      <label for="name">Contact Name</label>
+      <input id="name" name="name" maxlength="80" type="text" required>
 
-<input type="submit" name="submit">
+      <label for="email">Email</label>
+      <input id="email" name="email" maxlength="80" type="email" required>
 
-</form>
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" maxlength="40" type="tel">
+
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject" maxlength="80" type="text" required>
+
+      <label for="priority">Priority</label>
+      <select id="priority" name="priority" required>
+        <option value="">--None--</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <label for="product">Product</label>
+      <select id="00NgL00000t6f4A" name="00NgL00000t6f4A" title="Product" required>
+        <option value="">--None--</option>
+        <option value="GC1040">GC1040</option>
+        <option value="GC1060">GC1060</option>
+        <option value="GC3020">GC3020</option>
+        <option value="GC3040">GC3040</option>
+        <option value="GC3060">GC3060</option>
+        <option value="GC5020">GC5020</option>
+        <option value="GC5040">GC5040</option>
+        <option value="GC5060">GC5060</option>
+        <option value="GC1020">GC1020</option>
+      </select>
+
+      <label for="description">Description</label>
+      <textarea name="description" placeholder="Briefly describe your issue..."></textarea>
+
+      <input type="submit" value="Submit Request">
+    </form>
+  </div>
+
+</body>
+</html>
