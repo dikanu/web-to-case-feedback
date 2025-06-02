@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rejanta Resort Feedback Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+    .form-container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      width: 100%;
+    }
+    .form-container h2 {
+      text-align: center;
+      color: #4a148c;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #7b1fa2;
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .submit-button {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #7b1fa2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .submit-button:hover {
+      background-color: #6a1b9a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>📝 Share Your Feedback</h2>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000003R39l" method="POST">
+      <input type="hidden" name="orgid" value="00DgL000003R39l" />
+      <input type="hidden" name="retURL" value="https://dikanu.github.io/web-to-case-feedback/thank-you.html" />
+
+      <label for="00NgL00000zIs21">Booking ID</label>
+      <input id="00NgL00000zIs21" maxlength="15" name="00NgL00000zIs21" type="text" placeholder="Enter your Booking ID" required />
+
+      <label for="00NgL00000zIt2v">Your Feedback</label>
+      <textarea id="00NgL00000zIt2v" name="00NgL00000zIt2v" placeholder="How was your experience with us?" required></textarea>
+
+      <input type="submit" class="submit-button" value="Submit Feedback" />
+    </form>
+  </div>
+
+</body>
+</html>
