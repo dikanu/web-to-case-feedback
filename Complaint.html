@@ -7,23 +7,23 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f3f4f6;
+      background-color: #f8f9fa;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 50px;
+      padding: 50px 15px;
     }
     .form-container {
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 35px 40px;
       border-radius: 10px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       max-width: 550px;
       width: 100%;
     }
     .form-container h2 {
       text-align: center;
-      color: #6a1b9a;
+      color: #d32f2f;
       margin-bottom: 25px;
     }
     label {
@@ -33,7 +33,7 @@
       color: #333;
     }
     input[type="text"],
-    select {
+    textarea {
       width: 100%;
       padding: 10px 12px;
       margin-top: 6px;
@@ -43,16 +43,20 @@
       transition: border-color 0.2s ease;
     }
     input[type="text"]:focus,
-    select:focus {
-      border-color: #7b1fa2;
+    textarea:focus {
+      border-color: #d32f2f;
       outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
     }
     .submit-button {
       display: block;
       width: 100%;
       margin-top: 30px;
       padding: 12px;
-      background-color: #7b1fa2;
+      background-color: #d32f2f;
       color: white;
       border: none;
       border-radius: 6px;
@@ -61,14 +65,14 @@
       transition: background-color 0.3s ease;
     }
     .submit-button:hover {
-      background-color: #6a1b9a;
+      background-color: #b71c1c;
     }
   </style>
 </head>
 <body>
 
   <div class="form-container">
-    <h2>🛠️ Submit a Complaint / Feedback</h2>
+    <h2>🛠️ Submit a Complaint</h2>
 
     <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000003R39l" method="POST">
       <input type="hidden" name="orgid" value="00DgL000003R39l" />
@@ -77,19 +81,10 @@
       <label for="00NgL00000zIs21">Booking ID</label>
       <input id="00NgL00000zIs21" maxlength="15" name="00NgL00000zIs21" type="text" placeholder="Enter your Booking ID" required />
 
-      <label for="reason">Case Reason</label>
-      <select id="reason" name="reason" required>
-        <option value="">-- Please select --</option>
-        <option value="Installation">Installation</option>
-        <option value="Equipment Complexity">Equipment Complexity</option>
-        <option value="Performance">Performance</option>
-        <option value="Breakdown">Breakdown</option>
-        <option value="Equipment Design">Equipment Design</option>
-        <option value="Feedback">Feedback</option>
-        <option value="Other">Other</option>
-      </select>
+      <label for="00NgL00000zRznS">Customer Complaint</label>
+      <textarea id="00NgL00000zRznS" name="00NgL00000zRznS" placeholder="Describe the issue you're facing..." required></textarea>
 
-      <input type="submit" class="submit-button" value="Submit Request" />
+      <input type="submit" class="submit-button" value="Submit Complaint" />
     </form>
   </div>
 
