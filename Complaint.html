@@ -88,5 +88,14 @@
     </form>
   </div>
 
+  <!-- ✅ Auto-fill Booking ID from URL -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookingId = urlParams.get('bookingId');
+    if (bookingId) {
+      document.getElementById('00NgL00000zIs21').value = bookingId;
+    }
+  </script>
+
 </body>
 </html>
